@@ -1,17 +1,16 @@
 <?php
-session_start();
-include 'functions.inc.php';
-$currenttime = time();
-if (empty($_SESSION['userid'])) {
-    header("Location: signin.php");
-    exit();
-} elseif ($currenttime > $_SESSION["expire"]) {
-    session_unset();
-    session_destroy();
-    header("Location: signin.php");
-    exit();
-}
-
+// session_start();
+// include 'functions.inc.php';
+// $currenttime = time();
+// if (empty($_SESSION['userid'])) {
+//     header("Location: signin.php");
+//     exit();
+// } elseif ($currenttime > $_SESSION["expire"]) {
+//     session_unset();
+//     session_destroy();
+//     header("Location: signin.php");
+//     exit();
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -45,6 +44,48 @@ if (empty($_SESSION['userid'])) {
     <!-- HighChart -->
     <script src="https://code.highcharts.com/highcharts.js"></script>
 </head>
+
+<style>
+    .progress_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+
+    .progress-bar__container {
+        width: 100%;
+        height: 1rem;
+        border-radius: 2rem;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.5s;
+        will-change: transform;
+        box-shadow: 0 0 5px #000000;
+    }
+
+    .progress-bar {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        content: "";
+        background-color: #7d7978;
+        top: 0;
+        bottom: 0;
+        left: -100%;
+        border-radius: inherit;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: sans-serif;
+    }
+
+    .progress-bar__text {
+        display: none;
+    }
+</style>
 
 <body>
     <nav class="navbar navbar-expand-lg fixed-top navbarScroll">
@@ -170,18 +211,25 @@ if (empty($_SESSION['userid'])) {
                 <?php
                 if (isset($_GET["error"])) {
                     if ($_GET["error"] == "Failedtablemissmatch") {
-                        echo "<p> Upload Failed !</p>";
+                        echo "<p class='text-center' style = 'color: #ad2c0c;font-weight: bold;' > Upload Failed! Table Miss Matched</p>";
                     } else if ($_GET["error"] == "Failedtablemissmatch") {
                         echo "<p> Upload Failed !</p>";
                     } else if ($_GET["error"] == "UploadSuccessful") {
                         // Need to Redirect to Index.html
-                        echo "<p> Upload Successfull.</p>";
+                        echo "<p class='text-center' style = 'color: #1bab31;font-weight: bold;'> Upload Successfull.</p>";
                     } else if ($_GET["error"] == "Failed") {
                         // Need to Redirect to Index.html
-                        echo "<p>Upload Failed. Unknown error.</p>";
+                        echo "<p class='text-center' style = 'color: #ad2c0c;font-weight: bold;' >Upload Failed. Unknown error.</p>";
                     }
                 }
                 ?>
+                <!-- <div class="progress_container">
+                    <div class="progress-bar__container">
+                        <div class="progress-bar">
+                            <span class="progress-bar__text">Uploaded Successfully!</span>
+                        </div>
+                    </div>
+                </div> -->
                 <div class="row">
                     <div class="col-lg-3 mt-4">
                         <div class="card servicesText">
@@ -199,7 +247,7 @@ if (empty($_SESSION['userid'])) {
                             <div class="card-body">
                                 <h4 class="upload-title mt-3">Tower</h4>
                                 <select id="level2" name="tower">
-                                <option>Loading...</option>
+                                    <option>Loading...</option>
                                 </select>
                             </div>
                         </div>
@@ -210,8 +258,8 @@ if (empty($_SESSION['userid'])) {
                             <div class="card-body">
                                 <h4 class="upload-title mt-3">SBU</h4>
                                 <select id="level3" name="SBU">
-                                <option>Loading...</option>    
-                            </select>
+                                    <option>Loading...</option>
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -221,7 +269,7 @@ if (empty($_SESSION['userid'])) {
                             <div class="card-body">
                                 <h4 class="upload-title mt-3">Table</h4>
                                 <select id="level4" name="table_name">
-                                <option>Loading...</option>
+                                    <option>Loading...</option>
                                 </select>
                                 <div class="button-cont">
                                     <button class="button button2" name="download_button" value='templet'>Download Templet</button>
@@ -304,7 +352,7 @@ if (empty($_SESSION['userid'])) {
                 for (var k in data[i]) {
                     // console.log('Repeated')
                     // console.log(temp);
-                    if (!temp.includes(data[i][k]) || data[i][k]=='Overall') {
+                    if (!temp.includes(data[i][k]) || data[i][k] == 'Overall') {
                         temp.push(data[i][k]);
                     }
                 }
@@ -312,7 +360,7 @@ if (empty($_SESSION['userid'])) {
             }
             // Here is the completed data base
             // console.log("1");
-            
+
             function makeDropDown(data, filtersAsArray, targetElement) {
 
                 const filteredArray = filterArray(data, filtersAsArray);
@@ -466,6 +514,40 @@ if (empty($_SESSION['userid'])) {
             }
         });
     });
+</script>
+<script>
+    const progressBarContainer = document.querySelector('.progress-bar__container');
+    const progressBar = document.querySelector('.progress-bar');
+    const progressBarText = document.querySelector('.progress-bar__text');
+
+    const progressBarStates = [0, 7, 27, 34, 68, 80, 95, 100];
+
+    let time = 0;
+    let endState = 100; 
+
+    progressBarStates.forEach(state => {
+    let randomTime = Math.floor(Math.random() * 3000);
+    setTimeout(() => {
+        if(state == endState){
+        gsap.to(progressBar, {
+            x: `${state}%`,
+            duration: 2,
+            backgroundColor: '#149132',
+            onComplete: () => {
+            progressBarText.style.display = "initial";
+            progressBarContainer.style.boxShadow = '0 0 5px #149132';
+            }
+        });
+        }else{
+        gsap.to(progressBar, {
+            x: `${state}%`,
+            duration: 2,
+        });
+        }
+    }, randomTime + time);
+    time += randomTime;
+    })
+
 </script>
 
 </html>

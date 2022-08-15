@@ -146,18 +146,19 @@
     /* Dashboard */
     /* Dashboard */
     .box {
-        background-color: black;
+        background-color: gray;
         /* height: 85vh; */
         padding: 0.3em 0.3em 0.3em 0.3em;
     }
-
 </style>
 
 <body>
 
 
     <div class="box">
-        <div pbi-resize="powerbi" pbi-resize-src="https://app.powerbi.com/reportEmbed?reportId=a44edb73-06b9-4dee-abdf-efa621dfbd83&amp;autoAuth=true&amp;ctid=48affa70-828c-4a3a-8c85-381663b7463b&amp;config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLWV1cm9wZS1ub3J0aC1iLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0LyJ9" pbi-resize-min-width="600" pbi-default-width="600px" pbi-default-height="600" pbi-resize-width="19" pbi-resize-height="10" pbi-resize-load-event="page-load" pbi-resize-header="true" style="position: relative;"><iframe frameborder="0" allowfullscreen="true"></iframe></div>
+        <div pbi-resize="powerbi" pbi-resize-src="https://app.powerbi.com/reportEmbed?reportId=a44edb73-06b9-4dee-abdf-efa621dfbd83&amp;autoAuth=true&amp;ctid=48affa70-828c-4a3a-8c85-381663b7463b&amp;config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLWV1cm9wZS1ub3J0aC1iLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0LyJ9" pbi-resize-min-width="600" pbi-default-width="600px" pbi-default-height="488" pbi-resize-width="1700" pbi-resize-height="900" pbi-resize-load-event="page-load" pbi-resize-header="true" style="position: relative;">
+            <iframe frameborder="0" allowfullscreen="true"></iframe>
+        </div>
         <script type="text/javascript">
             ! function() {
                 if ("undefined" == typeof window.powerbiresizescript) {
@@ -469,13 +470,13 @@
                         var style = document.createElement('style');
                         style.type = 'text/css';
                         var keyFrames = '@keyframes pbi-resize-spinner {\
-                    0% {\
-                        transform: rotate(0deg);\
-                    }\
-                    100% {\
-                        transform: rotate(360deg);\
-                    }\
-                }';
+                0% {\
+                    transform: rotate(0deg);\
+                }\
+                100% {\
+                    transform: rotate(360deg);\
+                }\
+            }';
                         style.innerHTML = keyFrames;
                         document.getElementsByTagName('head')[0].appendChild(style);
                         iframe.setAttribute('src', src);
@@ -486,6 +487,7 @@
                 }
             }();
         </script>
+
     </div>
 </body>
 

@@ -8,8 +8,8 @@
 
         if( !is_array($exclude) ) $exclude = array($exclude);
         array_push($values,"'$project'");
-        array_push($values,"'$SBU'");
         array_push($values,"'$tower'");
+        array_push($values,"'$SBU'");
         
         foreach( array_keys($data) as $key ) {
             if( !in_array($key, $exclude) ) {
@@ -21,14 +21,8 @@
         $col = implode(",", $csv_columns_with_quotes);
         $values = implode(",", $values);
 
-        // echo "<br><br>";
-        // print_r($col);
-        // echo "<br><br>";
-        // print_r($values);
-        // echo "<br><br>";
         
         // Uploading data based on the Column name
-        // Need to add the project name and SBU Code
         if( mysqli_query($conn,"INSERT INTO `$table` ($col) VALUES ($values)") ) {
         } 
         else {
@@ -82,6 +76,8 @@
                     
         }
         
+        // print_r($csv_columns_with_quotes);
+        
         $j=0;
         if (array_intersect($csv_columns_with_quotes, $stack) == $csv_columns_with_quotes) {
             while (($line = fgetcsv($handler)) !== false) {
@@ -102,15 +98,15 @@
         }
         else{
             // echo "This is not matching at all";
-            // header("location:index.php?error=Failedtablemissmatch#Uploaddata");
-            echo "CSV";
-            print_r($csv_columns_with_quotes);
-            echo "<br> <br>";
-            echo "Table";
-            print_r($stack);
-            echo "<br> <br>";
-            echo "Intersection";
-            print_r(array_intersect($csv_columns_with_quotes, $stack));
+            header("location:index.php?error=Failedtablemissmatch#Uploaddata");
+            // echo "CSV";
+            // print_r($csv_columns_with_quotes);
+            // echo "<br> <br>";
+            // echo "Table";
+            // print_r($stack);
+            // echo "<br> <br>";
+            // echo "Intersection";
+            // print_r(array_intersect($csv_columns_with_quotes, $stack));
             exit();
         }
     }
