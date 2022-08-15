@@ -1,11 +1,16 @@
 <?php
     $conn = mysqli_connect('uploaddatabase.cmi7k84twi7t.us-east-1.rds.amazonaws.com', 'nikhil', 'TFjune2022', 'data_loads');
 
-    $result = mysqli_query($conn, "SELECT O_PHP_FILTERS.project_name, O_PHP_FILTERS.tower , O_SBU_MAPPING.sbu_identifier , O_PHP_FILTERS.display_name 
-    FROM O_PROJECTS 
-    JOIN O_PHP_FILTERS ON O_PROJECTS.Projec_shorts = O_PHP_FILTERS.project_code
-    JOIN O_SBU_MAPPING ON O_PROJECTS.sbu_mapping_id = O_SBU_MAPPING.mapping_id 
-    ORDER BY project_name,tower,sbu_identifier,display_name;");
+    $result = mysqli_query($conn, "SELECT 
+            Project_Full_Name AS project_name,
+            PPTM.Tower_Maper AS tower, 
+            OSM.sbu_identifier,
+            PTL.display_name
+        FROM O_PROJECTS op 
+        JOIN PHP_PROJECT_TOWER_MAP PPTM ON op.Project_description = PPTM.Project_Full_Name 
+        LEFT JOIN O_SBU_MAPPING OSM ON op.sbu_mapping_id =  OSM.mapping_id 
+        CROSS JOIN PHP_TABLE_LIST PTL
+        ORDER BY CAST(op.project_id AS DECIMAL),OSM.mapping_id,PPTM.Tower_Maper;");
 
     $data = array();
     while ($row = mysqli_fetch_array($result)) {
