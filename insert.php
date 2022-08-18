@@ -42,7 +42,7 @@
         $tower      = $_POST['tower'];
         
         // Collecting the data table name based on the selection from user
-        $queryTable =  mysqli_query($conn,"SELECT DISTINCT data_table FROM O_PHP_FILTERS WHERE display_name = '$table_name';");
+        $queryTable =  mysqli_query($conn,"SELECT DISTINCT data_table FROM PHP_TABLE_LIST WHERE display_name = '$table_name';");
         $table_fetch= mysqli_fetch_array($queryTable);
         $table = $table_fetch['data_table'];   
 

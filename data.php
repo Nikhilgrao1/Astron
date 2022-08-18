@@ -10,7 +10,7 @@
         JOIN PHP_PROJECT_TOWER_MAP PPTM ON op.Project_description = PPTM.Project_Full_Name 
         LEFT JOIN O_SBU_MAPPING OSM ON op.sbu_mapping_id =  OSM.mapping_id 
         CROSS JOIN PHP_TABLE_LIST PTL
-        ORDER BY CAST(op.project_id AS DECIMAL),OSM.mapping_id,PPTM.Tower_Maper;");
+        ORDER BY CAST(op.project_id AS DECIMAL),OSM.mapping_id,PPTM.Tower_Maper,PTL.display_name;");
 
     $data = array();
     while ($row = mysqli_fetch_array($result)) {
