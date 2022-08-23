@@ -27,7 +27,7 @@
 
 .navbar-brand,
 .nav-item .nav-link,
-.nav-item  .btn {
+.nav-item .btn {
   /* color: #fff; */
   color: #ffffff;
 }
@@ -38,7 +38,7 @@
 }
 
 .nav-item .nav-link:hover,
-.nav-item  .btn:hover {
+.nav-item .btn:hover {
   /* color: #fff; */
   color: gray;
 }
@@ -91,7 +91,11 @@ h6 {
 .download p {
   text-align: center;
 }
-
+/* Upload Section Styling  */
+.uploadOptions.card {
+  height: 100%;
+  cursor: pointer;
+}
 /* services section css */
 .servicesText.card {
   height: 100%;
@@ -116,15 +120,15 @@ h6 {
   text-align: left;
 }
 .card:hover .servicesIcon {
-  color: white;
+  color: green;
 }
 .servicesText:hover {
   border: 3px solid #000000;
 }
 
-.card:hover {
+/* .card:hover {
   border: 3px solid #000000;
-}
+} */
 
 /* display background color black on navbar scroll */
 .navbarScroll.navbarDark {
@@ -155,7 +159,7 @@ h6 {
   max-height: 40px;
 }
 
-#footer a{
+#footer a {
   /* color: red; */
   padding-left: 10px;
 }

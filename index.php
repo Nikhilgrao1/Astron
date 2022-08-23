@@ -1,17 +1,19 @@
 <?php
-session_start();
-include 'functions.inc.php';
-$currenttime = time();
-if (empty($_SESSION['userid'])) {
-    header("Location: signin.php");
-    exit();
-} elseif ($currenttime > $_SESSION["expire"]) {
-    session_unset();
-    session_destroy();
-    header("Location: signin.php");
-    exit();
+    session_start();
+    include 'functions.inc.php';
+    $currenttime = time();
+    if (empty($_SESSION['userid'])) {
+        header("Location: signin.php");
+        exit();
+    } elseif ($currenttime > $_SESSION["expire"]) {
+        session_unset();
+        session_destroy();
+        header("Location: signin.php");
+        exit();
 }
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -209,19 +211,22 @@ if (empty($_SESSION['userid'])) {
             <div class="container">
                 <h1 class="text-center">Upload Data</h1>
                 <?php
-                if (isset($_GET["error"])) {
-                    if ($_GET["error"] == "Failedtablemissmatch") {
-                        echo "<p class='text-center' style = 'color: #ad2c0c;font-weight: bold;' > Upload Failed! Table Miss Matched</p>";
-                    } else if ($_GET["error"] == "Failedtablemissmatch") {
-                        echo "<p> Upload Failed !</p>";
-                    } else if ($_GET["error"] == "UploadSuccessful") {
-                        // Need to Redirect to Index.html
-                        echo "<p class='text-center' style = 'color: #1bab31;font-weight: bold;'> Upload Successfull.</p>";
-                    } else if ($_GET["error"] == "Failed") {
-                        // Need to Redirect to Index.html
-                        echo "<p class='text-center' style = 'color: #ad2c0c;font-weight: bold;' >Upload Failed. Unknown error.</p>";
+                    if (isset($_GET["error"])) {
+                        if ($_GET["error"] == "Failedtablemissmatch") {
+                            echo "<p class='text-center' style = 'color: #ad2c0c;font-weight: bold;' > Upload Failed! Table Miss Matched</p>";
+                        } else if ($_GET["error"] == "Failedtablemissmatch") {
+                            echo "<p> Upload Failed !</p>";
+                        } else if ($_GET["error"] == "UploadSuccessful") {
+                            // Need to Redirect to Index.html
+                            echo "<p class='text-center' style = 'color: #1bab31;font-weight: bold;'> Upload Successfull.</p>";
+                        } else if ($_GET["error"] == "Failed") {
+                            // Need to Redirect to Index.html
+                            echo "<p class='text-center' style = 'color: #ad2c0c;font-weight: bold;' >Upload Failed. Unknown error.</p>";
+                        }else if ($_GET["error"] == "dateissue") {
+                            // Need to Redirect to Index.html
+                            echo "<p class='text-center' style = 'color: #ad2c0c;font-weight: bold;' >Upload Failed. Upload Date cannot be in future.</p>";
+                        }
                     }
-                }
                 ?>
                 <!-- <div class="progress_container">
                     <div class="progress-bar__container">
@@ -231,8 +236,18 @@ if (empty($_SESSION['userid'])) {
                     </div>
                 </div> -->
                 <div class="row">
-                    <div class="col-lg-3 mt-4">
-                        <div class="card servicesText">
+                    <!-- Adding the New Date Picker for the user -->
+                    <div class="col mt-4">
+                        <div class="card uploadOptions">
+                            <div class="card-body">
+                                <h4 class="upload-title mt-3">Upload Date</h4>
+                                <input type="date" id="datepicker" name="uploadDate">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mt-4">
+                        <div class="card uploadOptions">
                             <div class="card-body">
                                 <h4 class="upload-title mt-3">Project</h4>
                                 <select id="level1" name="project">
@@ -242,8 +257,8 @@ if (empty($_SESSION['userid'])) {
                         </div>
                     </div>
 
-                    <div class="col-lg-3 mt-4">
-                        <div class="card servicesText">
+                    <div class="col mt-4">
+                        <div class="card uploadOptions">
                             <div class="card-body">
                                 <h4 class="upload-title mt-3">Tower</h4>
                                 <select id="level2" name="tower">
@@ -253,8 +268,8 @@ if (empty($_SESSION['userid'])) {
                         </div>
                     </div>
 
-                    <div class="col-lg-3 mt-4">
-                        <div class="card servicesText">
+                    <div class="col mt-4">
+                        <div class="card uploadOptions">
                             <div class="card-body">
                                 <h4 class="upload-title mt-3">SBU</h4>
                                 <select id="level3" name="SBU">
@@ -264,8 +279,8 @@ if (empty($_SESSION['userid'])) {
                         </div>
                     </div>
 
-                    <div class="col-lg-3 mt-4">
-                        <div class="card servicesText">
+                    <div class="col mt-4">
+                        <div class="card uploadOptions">
                             <div class="card-body">
                                 <h4 class="upload-title mt-3">Table</h4>
                                 <select id="level4" name="table_name">
@@ -280,7 +295,7 @@ if (empty($_SESSION['userid'])) {
                 </div>
                 <div class="row">
                     <div class="col-lg-12 mt-4">
-                        <div class="card servicesText">
+                        <div class="card uploadOptions">
                             <div class="card-body">
                                 <h4 class="upload-title mt-3">Upload Data</h4>
                                 <input type="file" id="csvFileInput" style="padding-bottom : 0px" accept=".csv" name="Upload_File">
@@ -319,6 +334,7 @@ if (empty($_SESSION['userid'])) {
 </body>
 
 <script>
+    document.getElementById('datepicker').valueAsDate = new Date();
     const header = document.querySelector('.navbar');
     window.onscroll = function() {
         var top = window.scrollY;
