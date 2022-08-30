@@ -58,9 +58,9 @@
                 <div class="col-lg-4 mt-3">
                     <div class="card servicesText">
                         <div class="card-body">
-                            <i class="fas servicesIcon fa-clock"></i>
-                            <h4 class="card-title mt-3">Data Uplaod</h4>
-                            <p class="card-text mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec felis aliquam, lacinia neque vitae, ornare ipsum. Nam semper est turpis, non molestie est posuere quis. Morbi tincidunt at lacus vitae ultrices. Integer ac massa tincidunt, convallis felis a, fringilla risus. Vestibulum gravida, sapien id laoreet tempus, dui ipsum efficitur risus, non venenatis mi tellus sed sem. Phasellus efficitur dui convallis fermentum auctor. Proin ut elit eu diam fermentum tincidunt et eu neque.
+                            <i class="fas servicesIcon fa-cloud-upload"></i>
+                            <h4 class="card-title mt-3">Data Upload</h4>
+                            <p class="card-text mt-3">The data for each project will be uploaded by different departments involved in the form of specific templates which will then be processed further for visualization.
                             </p>
                         </div>
                     </div>
@@ -68,9 +68,9 @@
                 <div class="col-lg-4 mt-3">
                     <div class="card servicesText">
                         <div class="card-body">
-                            <i class='fas servicesIcon fa-layer-group'></i>
+                            <i class='fas servicesIcon fa-database'></i>
                             <h4 class="card-title mt-3">Data Storage</h4>
-                            <p class="card-text mt-3"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec felis aliquam, lacinia neque vitae, ornare ipsum. Nam semper est turpis, non molestie est posuere quis. Morbi tincidunt at lacus vitae ultrices. Integer ac massa tincidunt, convallis felis a, fringilla risus. Vestibulum gravida, sapien id laoreet tempus, dui ipsum efficitur risus, non venenatis mi tellus sed sem. Phasellus efficitur dui convallis fermentum auctor. Proin ut elit eu diam fermentum tincidunt et eu neque.
+                            <p class="card-text mt-3"> The data uploaded will be stored in the database for all future needs and requirements in order to have it accessible as and when necessary.
                             </p>
                         </div>
                     </div>
@@ -81,7 +81,7 @@
                         <div class="card-body">
                             <i class='far servicesIcon fa-check-circle'></i>
                             <h4 class="card-title mt-3">Data Wrangling</h4>
-                            <p class="card-text mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec felis aliquam, lacinia neque vitae, ornare ipsum. Nam semper est turpis, non molestie est posuere quis. Morbi tincidunt at lacus vitae ultrices. Integer ac massa tincidunt, convallis felis a, fringilla risus. Vestibulum gravida, sapien id laoreet tempus, dui ipsum efficitur risus, non venenatis mi tellus sed sem. Phasellus efficitur dui convallis fermentum auctor. Proin ut elit eu diam fermentum tincidunt et eu neque.
+                            <p class="card-text mt-3">The data will be transformed, mapped and cleaned into another format with the intent of making it more appropriate and valuable for a variety of downstream purposes.
                             </p>
                         </div>
                     </div>
@@ -91,9 +91,9 @@
                 <div class="col-lg-4 mt-3">
                     <div class="card servicesText">
                         <div class="card-body">
-                            <i class='fas servicesIcon fa-search'></i>
-                            <h4 class="card-title mt-3">Data Vizualisation</h4>
-                            <p class="card-text mt-3"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec felis aliquam, lacinia neque vitae, ornare ipsum. Nam semper est turpis, non molestie est posuere quis. Morbi tincidunt at lacus vitae ultrices. Integer ac massa tincidunt, convallis felis a, fringilla risus. Vestibulum gravida, sapien id laoreet tempus, dui ipsum efficitur risus, non venenatis mi tellus sed sem. Phasellus efficitur dui convallis fermentum auctor. Proin ut elit eu diam fermentum tincidunt et eu neque.
+                            <i class='fas servicesIcon fa-pie-chart'></i>
+                            <h4 class="card-title mt-3">Data Visualization</h4>
+                            <p class="card-text mt-3"> The stored data from various departments will be connected to Power BI and then it will be visualized in the form of “Interactive Dashboards” as per the formats shared by departments in line with HOD's.
                             </p>
                         </div>
                     </div>
@@ -102,9 +102,9 @@
                 <div class="col-lg-4 mt-3">
                     <div class="card servicesText">
                         <div class="card-body">
-                            <i class='fas servicesIcon fa-shield-alt'></i>
+                            <i class='fas servicesIcon fa-desktop'></i>
                             <h4 class="card-title mt-3">Reporting Structure</h4>
-                            <p class="card-text mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec felis aliquam, lacinia neque vitae, ornare ipsum. Nam semper est turpis, non molestie est posuere quis. Morbi tincidunt at lacus vitae ultrices. Integer ac massa tincidunt, convallis felis a, fringilla risus. Vestibulum gravida, sapien id laoreet tempus, dui ipsum efficitur risus, non venenatis mi tellus sed sem. Phasellus efficitur dui convallis fermentum auctor. Proin ut elit eu diam fermentum tincidunt et eu neque.
+                            <p class="card-text mt-3">Each department will have their own sub selections which can be used to navigate from one report to another. All these sub selections will have a filter option for both Projects & SBU's based on the applicability.
                             </p>
                         </div>
                     </div>
@@ -113,9 +113,9 @@
                 <div class="col-lg-4 mt-3">
                     <div class="card servicesText">
                         <div class="card-body">
-                            <i class='fas servicesIcon fa-wrench'></i>
+                            <i class='fas servicesIcon fa-road'></i>
                             <h4 class="card-title mt-3">Future</h4>
-                            <p class="card-text mt-3"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec felis aliquam, lacinia neque vitae, ornare ipsum. Nam semper est turpis, non molestie est posuere quis. Morbi tincidunt at lacus vitae ultrices. Integer ac massa tincidunt, convallis felis a, fringilla risus. Vestibulum gravida, sapien id laoreet tempus, dui ipsum efficitur risus, non venenatis mi tellus sed sem. Phasellus efficitur dui convallis fermentum auctor. Proin ut elit eu diam fermentum tincidunt et eu neque.
+                            <p class="card-text mt-3"> Even though there is no direct analytics and forecast involved, the aim is to provide detailed Insights, Trends, Analytics & Forecasts along with risk factors. The platform will be made sustainable and most of the manual entries for tracking progress will be made autonomous / semi autonomous.
                             </p>
                         </div>
                     </div>
