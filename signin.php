@@ -164,10 +164,10 @@
         <div class="container-fluid">
             <!-- social media icons -->
             <div class="social-icons mt-4">
-                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#home"><i class="fab fa-facebook"></i></a>
+                <a href="#home"><i class="fab fa-youtube"></i></a>
+                <a href="#home"><i class="fab fa-linkedin"></i></a>
+                <a href="#home"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
     </footer>

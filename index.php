@@ -10,7 +10,7 @@
         session_destroy();
         header("Location: signin.php");
         exit();
-}
+    }
 ?>
 
 
@@ -113,7 +113,10 @@
                         <a class="nav-link" href="#Uploaddata">Uploaddata</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="dashboard.php">Dashboards</a>
+                        <a class="nav-link" href="dashboardv1.php">Dashboard-V1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboardv2.php">Dashboard-V2</a>
                     </li>
                 </ul>
             </div>
@@ -324,10 +327,10 @@
         <div class="container-fluid">
             <!-- social media icons -->
             <div class="social-icons mt-4">
-                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#home"><i class="fab fa-facebook"></i></a>
+                <a href="#home"><i class="fab fa-youtube"></i></a>
+                <a href="#home"><i class="fab fa-linkedin"></i></a>
+                <a href="#home"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
     </footer>

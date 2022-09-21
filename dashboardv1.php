@@ -1,16 +1,16 @@
 <?php
-// session_start();
-// include 'functions.inc.php';
-// $currenttime = time();
-// if (empty($_SESSION['userid'])) {
-//     header("Location: signin.php");
-//     exit();
-// } elseif ($currenttime > $_SESSION["expire"]) {
-//     session_unset();
-//     session_destroy();
-//     header("Location: signin.php");
-//     exit();
-// }
+    session_start();
+    include 'functions.inc.php';
+    $currenttime = time();
+    if (empty($_SESSION['userid'])) {
+        header("Location: signin.php");
+        exit();
+    } elseif ($currenttime > $_SESSION["expire"]) {
+        session_unset();
+        session_destroy();
+        header("Location: signin.php");
+        exit();
+    }
 
 ?>
 <!DOCTYPE html>
@@ -43,7 +43,7 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"> -->
     <!-- HighChart -->
-    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <!-- <script src="https://code.highcharts.com/highcharts.js"></script> -->
 </head>
 
 
@@ -146,17 +146,14 @@
     /* Dashboard */
     /* Dashboard */
     .box {
-        background-color: gray;
+        background-color: black;
         /* height: 85vh; */
         padding: 0.3em 0.3em 0.3em 0.3em;
     }
 </style>
-
 <body>
-
-
     <div class="box">
-        <div pbi-resize="powerbi" pbi-resize-src="https://app.powerbi.com/reportEmbed?reportId=a44edb73-06b9-4dee-abdf-efa621dfbd83&amp;autoAuth=true&amp;ctid=48affa70-828c-4a3a-8c85-381663b7463b&amp;config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLWV1cm9wZS1ub3J0aC1iLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0LyJ9" pbi-resize-min-width="600" pbi-default-width="600px" pbi-default-height="488" pbi-resize-width="1700" pbi-resize-height="900" pbi-resize-load-event="page-load" pbi-resize-header="true" style="position: relative;">
+        <div pbi-resize="powerbi" pbi-resize-src="https://app.powerbi.com/reportEmbed?reportId=622219d6-65a9-47a9-b26f-fd0ffb655fd6&amp;autoAuth=true&amp;ctid=48affa70-828c-4a3a-8c85-381663b7463b&amp;config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLWV1cm9wZS1ub3J0aC1iLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0LyJ9" pbi-resize-min-width="600" pbi-default-width="600px" pbi-default-height="488" pbi-resize-width="1700" pbi-resize-height="900" pbi-resize-load-event="page-load" pbi-resize-header="true" style="position: relative;">
             <iframe frameborder="0" allowfullscreen="true"></iframe>
         </div>
         <script type="text/javascript">
