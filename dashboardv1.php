@@ -11,7 +11,6 @@
         header("Location: signin.php");
         exit();
     }
-
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -151,9 +150,10 @@
         padding: 0.3em 0.3em 0.3em 0.3em;
     }
 </style>
+
 <body>
     <div class="box">
-        <div pbi-resize="powerbi" pbi-resize-src="https://app.powerbi.com/reportEmbed?reportId=622219d6-65a9-47a9-b26f-fd0ffb655fd6&amp;autoAuth=true&amp;ctid=48affa70-828c-4a3a-8c85-381663b7463b&amp;config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLWV1cm9wZS1ub3J0aC1iLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0LyJ9" pbi-resize-min-width="600" pbi-default-width="600px" pbi-default-height="488" pbi-resize-width="1700" pbi-resize-height="900" pbi-resize-load-event="page-load" pbi-resize-header="true" style="position: relative;">
+        <div pbi-resize="powerbi" pbi-resize-src="https://app.powerbi.com/reportEmbed?reportId=cb7171a0-6bde-4701-bc37-a8d7808abfee&amp;autoAuth=true&amp;ctid=48affa70-828c-4a3a-8c85-381663b7463b&amp;config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLWV1cm9wZS1ub3J0aC1iLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0LyJ9" pbi-resize-min-width="600" pbi-default-width="600px" pbi-default-height="488" pbi-resize-width="1700" pbi-resize-height="900" pbi-resize-load-event="page-load" pbi-resize-header="true" style="position: relative;">
             <iframe frameborder="0" allowfullscreen="true"></iframe>
         </div>
         <script type="text/javascript">
